@@ -5,7 +5,7 @@ package commerce;
 public class AdminPanel extends Panel{
 
 	public AdminPanel() {
-		new Panel();
+		super();
 	}
 	
 	public void addProduct(Product product) {
@@ -47,6 +47,23 @@ public class AdminPanel extends Panel{
 		
 		this.productList.get(index).setStock(stock);
 		return true;
+	}
+
+	//Metodo per stampare lista di tutti prodotti
+	public void printAdminList() {
+		if(this.productList.isEmpty()) {
+			System.out.println("Non ci sono prodotti disponibili");
+		} else {
+			System.out.println("\n\n");
+			System.out.printf("%-20s%-20s%-20s\n","Nome","Prezzo","Quantità");
+			System.out.println("-------------------------------------------");
+			for(Product product : this.productList) {
+				System.out.print(productList.lastIndexOf(product) + " ");
+				System.out.printf("%-20s%-20s%-20s\n",
+						product.getName(),product.getPrice(), product.getStock());
+
+			}
+		}
 	}
 	
 }

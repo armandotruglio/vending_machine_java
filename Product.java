@@ -40,11 +40,11 @@ public class Product {
 	}
 
 	
-	public Boolean isInStock() {
+	public boolean isInStock() {
 		return this.stock > 0;
 	}
 	
-	public Boolean decreaseStock() {
+	public boolean decreaseStock() {
 		if(this.isInStock()) {
 			this.stock--;
 			return true;

@@ -31,9 +31,9 @@ public class Panel {
 		//Controllo che il prodotto sia disponibile
 		if(product.decreaseStock()) {
 			wallet.decreaseCredit(product.getPrice());
-			
 			return 1;
 		}
+
 
 		//Errore generico
 		return 0;
@@ -70,33 +70,9 @@ public class Panel {
 		}
 	}
 	
-	//Metodo per stampare lista di tutti prodotti
-	public void printAdminList() {
-		if(this.productList.isEmpty()) {
-			System.out.println("Non ci sono prodotti disponibili");
-		} else {
-			System.out.println("\n\n");
-			System.out.printf("%-20s%-20s%-20s\n","Nome","Prezzo","Quantità");
-			System.out.println("-------------------------------------------");
-			for(Product product : this.productList) {
-				System.out.print(productList.lastIndexOf(product) + " ");
-				System.out.printf("%-20s%-20s%-20s\n",
-						product.getName(),product.getPrice(), product.getStock());
-				
-			}			
-		}
-	}
-	
-	
 	//Metodo per verificare che l'id del prodotto sia nel range
 	public Boolean productExist(int index) {
         return index >= 0 && index < this.productList.size();
     }
-	
-	
-	
-	
-	
-	
 	
 }
