@@ -114,20 +114,32 @@ public class Main {
 										System.out.println("Digitare nuovo nome prodotto: ");
 										String name = scanner.nextLine().trim();
 										
-										panel.updateProduct(id, name);
+										if(panel.updateProduct(id, name)){
+											System.out.println("Nome prodotto aggiornato correttamente");
+										} else{
+											System.out.println("Errore nell'aggiornamento del prodotto");
+										}
 									}
 									else if(Integer.parseInt(editChoice) == 2) {
 										System.out.println("Digitare nuovo prezzo prodotto: ");
 										double price = Double.parseDouble(scanner.nextLine());
 										
-										panel.updateProduct(id, price);
+										if(panel.updateProduct(id, price)){
+											System.out.println("Prezzo prodotto aggiornato correttamente");
+										} else{
+											System.out.println("Errore nell'aggiornamento del prodotto");
+										}
 										
 									}
 									else if(Integer.parseInt(editChoice) == 3) {
 										System.out.println("Digitare nuova quantità prodotto: ");
 										int stock = Integer.parseInt(scanner.nextLine());
-										
-										panel.updateProduct(id, stock);
+
+										if(panel.updateProduct(id, stock)){
+											System.out.println("Quantità prodotto aggiornata correttamente");
+										} else{
+											System.out.println("Errore nell'aggiornamento del prodotto");
+										}
 									}
 									else if(Integer.parseInt(editChoice) == 0) {
 										break;

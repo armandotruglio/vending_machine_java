@@ -74,7 +74,7 @@ public class Panel {
 			System.out.println("Non ci sono prodotti disponibili");
 		} else {
 			System.out.println("\n\n");
-			System.out.printf("%-20s%-20s%-20s\\n\",\"Nome\",\"Prezzo\",\"Quantità");
+			System.out.printf("%-20s%-20s%-20s\n","Nome","Prezzo","Quantità");
 			System.out.println("-------------------------------------------");
 			for(Product product : this.productList) {
 				System.out.print(productList.lastIndexOf(product) + " ");
@@ -88,11 +88,11 @@ public class Panel {
 	
 	//Metodo per verificare che l'id del prodotto sia nel range
 	public Boolean productExist(int index) {
-		if(index<0 || index>=this.productList.size()) {
-			return false;
+		if(index>=0 && index<this.productList.size()) {
+			return true;
 		}
 		
-		return true;
+		return false;
 	}
 	
 	

@@ -13,7 +13,7 @@ public class AdminPanel extends Panel{
 	}
 	
 	public Boolean removeProduct(int index) {
-		if(this.productExist(index)) {
+		if(!this.productExist(index)) {
 			return false;
 		}
 		this.productList.remove(index);
