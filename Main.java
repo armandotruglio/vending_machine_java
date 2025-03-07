@@ -30,7 +30,7 @@ public class Main {
 			if(Integer.parseInt(choice) == 1) {
 				System.out.println("-------------------------------------------");
 				System.out.println("Digitare somma da inserire: ");
-				Double credit = Double.parseDouble(scanner.nextLine());
+				double credit = Double.parseDouble(scanner.nextLine());
 				panel.addCredit(credit);
 			}
 			else if(Integer.parseInt(choice) == 2) {
@@ -60,7 +60,7 @@ public class Main {
 			}
 			else if(Integer.parseInt(choice) == 3) {
 				System.out.println("Inserisci password: ");
-				String password = scanner.nextLine().trim().toString();
+				String password = scanner.nextLine().trim();
 				
 				if(password.equals("password")) {
 					
