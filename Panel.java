@@ -15,25 +15,27 @@ public class Panel {
 	//Metodo per acquistare un prodotto
 	
 	public int buyProduct(int index) {
+
+		//Controllo esistenza prodotto
 		if(!this.productExist(index)) {
 			return 0;
 		}
+		//Trovo il prodotto
 		Product product = productList.get(index);
 		
-		
+		//Controllo che il credito sia sufficiente
 		if(wallet.getCredit()<product.getPrice()) {
 			return -1;
 		}
-		
-		if(product.isInStock()) {
-			//Diminuisco la quantità del prodotto
-			product.decreaseStock();
-			//Diminuisco il credito
-			wallet.decreseCredit(product.getPrice());
+
+		//Controllo che il prodotto sia disponibile
+		if(product.decreaseStock()) {
+			wallet.decreaseCredit(product.getPrice());
 			
 			return 1;
 		}
-		
+
+		//Errore generico
 		return 0;
 	}
 	
@@ -88,12 +90,8 @@ public class Panel {
 	
 	//Metodo per verificare che l'id del prodotto sia nel range
 	public Boolean productExist(int index) {
-		if(index>=0 && index<this.productList.size()) {
-			return true;
-		}
-		
-		return false;
-	}
+        return index >= 0 && index < this.productList.size();
+    }
 	
 	
 	

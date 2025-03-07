@@ -41,7 +41,7 @@ public class Product {
 
 	
 	public Boolean isInStock() {
-		return this.stock > 0 ? true : false;
+		return this.stock > 0;
 	}
 	
 	public Boolean decreaseStock() {
