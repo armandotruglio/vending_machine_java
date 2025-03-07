@@ -6,10 +6,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		AdminPanel panel = new AdminPanel();
-		Product water = new Product("Water", 0.50 , 5);
-		Product chips = new Product("Chips", 1.50 , 2);
-		Product coke = new Product("Coke", 2.00, 6);
-		Product lemonade = new Product("Lemonade", 2.5 , 10);
+		Product water = new Product("Acqua", 0.50 , 5);
+		Product chips = new Product("Patatine", 1.50 , 2);
+		Product coke = new Product("Coca-Cola", 2.00, 6);
+		Product lemonade = new Product("Sprite", 2.5 , 10);
 		panel.addProduct(water);
 		panel.addProduct(chips);
 		panel.addProduct(coke);
